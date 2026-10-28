@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100D12">
+  <meta name="description"
+    content="Halloween World — explore a haunted shop, play mysterious mini-games, and discover the lore of Halloween.">
+  <title>Halloween World — Enter the Haunted Night</title>
+  <link rel="icon" href="assets/collection/skull-aged-02.webp" type="image/png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/showcase.css">
+  <link rel="stylesheet" href="css/immersive.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <div class="bg-fx" id="bg-fx" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <img class="web-corner web-corner--header-left" src="assets/collection/spider-web-02-corner-wood.webp" alt=""
+      aria-hidden="true">
+    <img class="web-corner web-corner--header-right" src="assets/collection/spider-web-03-torn-triangle.webp" alt=""
+      aria-hidden="true">
+    <div class="container masthead">
+      <a class="brand" href="#home" aria-label="Halloween World — back to top"><img class="brand-skull"
+          src="assets/collection/skull-aged-02.webp" alt="" width="24" height="30"> <span class="brand-name">Halloween
+          <b>World</b></span></a>
+      <p class="masthead-tagline">ENTER IF YOU DARE <span aria-hidden="true">✦</span> A GOTHIC HALLOWEEN EXPERIENCE</p>
+      <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping cart">Cart <span
+          id="cart-count" class="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> THE NIGHT IS YOUNG</p>
+          <h1>A little <em>macabre.</em><br>A whole lot of <span>magic.</span></h1>
+          <p class="hero-description">The gates are open. Explore the haunted shop, test your instincts, and uncover
+            secrets hidden in the Halloween night.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#shop">Explore the world <span
+                aria-hidden="true">↗</span></a><a class="button button-ghost" href="#games">Play the games <span
+                aria-hidden="true">▷</span></a></div>
+          <div class="hero-note"><span class="hero-note-sigil" aria-hidden="true">✦</span><span>A strange and wondrous
+              night awaits.</span></div>
+        </div>
+        <div class="hero-art hero-pumpkin" aria-label="Classic Halloween pumpkin">
+          <img class="hero-pumpkin-image" src="assets/collection/pumpkin-01-classic.webp"
+            alt="A classic carved Halloween pumpkin" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>SCROLL TO DISCOVER</span><span class="scroll-line"></span><span
+          id="countdown">Preparing the countdown…</span></div>
+    </section>
+
+    <section class="category section" id="categories">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">SPOOKY CATEGORIES</p>
+          <h2 class="spooky-title">Choose your<br>spooky world</h2>
+        </div>
+        <div class="category-grid">
+          <button class="category-card" type="button" data-shop-category="decor"><img class="category-img"
+              src="assets/collection/pumpkin-01-classic.webp" alt="" loading="lazy">
+            <h3>Decor</h3>
+            <p>Glowing pumpkins and eerie relics to light up the night.</p>
+          </button>
+          <button class="category-card" type="button" data-shop-category="toy"><img class="category-img"
+              src="assets/collection/nightlight-02-ghost-lantern.webp" alt="" loading="lazy">
+            <h3>Toys</h3>
+            <p>Ghostly companions for the most haunted home.</p>
+          </button>
+          <button class="category-card" type="button" data-shop-category="accessory"><img class="category-img"
+              src="assets/collection/witch-hat-01-plum-bow.webp" alt="" loading="lazy">
+            <h3>Accessories</h3>
+            <p>Witch hats and costume accessories for your midnight transformation.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro section" id="about">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">WELCOME, LITTLE STRANGER</p>
+          <h2>More than one night.<br><em>A world of its own.</em></h2>
+          <p>Every dark corner holds a story. Every door leads to the unexpected.</p>
+        </div>
+        <div class="about-night"><img class="about-img" src="assets/collection/skeleton-seated-stone.webp"
+            alt="A skeleton resting on stone" loading="lazy" width="360" height="391">
+          <div>
+            <h3 class="spooky-title">Welcome to<br>the haunted night</h3>
+            <p>Halloween falls on October 31. Wander the streets with friends, go trick-or-treating, and celebrate
+              beneath the full moon.</p><a class="button button-primary" href="#learn">Discover more ↗</a>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-icon"><img
+                src="assets/collection/menacing-bat-in-flight.webp" alt="" loading="lazy"></span>
+            <h3>Explore</h3>
+            <p>Wander through mysterious corners and uncover stories hidden in the mist.</p><span
+              class="feature-index">01 / EXPLORE</span>
+          </article>
+          <article class="feature-card"><span class="feature-icon"><img src="assets/collection/skull-cracked-01.webp"
+                alt="" loading="lazy"></span>
+            <h3>Mystery</h3>
+            <p>Collect clues, solve puzzles, and see where your instincts lead.</p><span class="feature-index">02 /
+              MYSTERY</span>
+          </article>
+          <article class="feature-card"><span class="feature-icon"><img
+                src="assets/collection/witch-hat-02-star-stitch.webp" alt="" loading="lazy"></span>
+            <h3>Create</h3>
+            <p>Find curious treasures to bring Halloween spirit into your space.</p><span class="feature-index">03 /
+              CREATE</span>
+          </article>
+          <article class="feature-card"><span class="feature-icon"><img src="assets/collection/skeleton-lotus-pose.webp"
+                alt="" loading="lazy"></span>
+            <h3>Learn</h3>
+            <p>Discover the festival’s origins and learn a few delightfully spooky words.</p><span
+              class="feature-index">04 / LEARN</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop section" id="shop">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">THE HAUNTED SHOP</p>
+            <h2>Claim a treasure.<br><em>Bring home the magic.</em></h2>
+          </div>
+          <p>Curiosities collected from the strangest corner of Halloween World. This is a demo catalog; real
+            transactions are not available.</p>
+        </div>
+        <div class="shop-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="product-search"
+              type="search" placeholder="Search the haunted shop…" aria-label="Search products"></label>
+          <div class="filter-list" id="category-filters" aria-label="Filter categories"><button
+              class="filter-chip active" data-category="all" type="button">All</button><button class="filter-chip"
+              data-category="decor" type="button">Decor</button><button class="filter-chip" data-category="accessory"
+              type="button">Accessories</button><button class="filter-chip" data-category="gift"
+              type="button">Gifts</button><button class="filter-chip" data-category="toy" type="button">Toys</button>
+          </div>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <p class="empty-state" id="shop-empty" hidden>Nothing lurks in this corner. Try another search term.</p>
+      </div>
+    </section>
+
+    <section class="games section" id="games">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">THE MIDNIGHT GAMES</p>
+            <h2>Bring a little courage.<br><em>Keep your curiosity.</em></h2>
+          </div>
+          <p>Two strange experiences for curious souls. No downloads required — just step inside.</p>
+        </div>
+        <div class="game-grid">
+          <article class="game-card fate-card">
+            <div class="game-art fate-art"><img class="game-art-image"
+                src="assets/collection/nightlight-03-purple-ghost-orb.webp" alt="A purple ghost lantern" loading="lazy">
+            </div>
+            <div class="game-content">
+              <div class="game-meta"><span>PERSONALITY QUIZ</span><span>5 QUESTIONS</span></div>
+              <h3>Halloween Fate</h3>
+              <p>The midnight mirror will reveal which Halloween spirit is hiding within you.</p><button
+                class="button button-primary game-start" data-game="fate" type="button">Reveal your fate
+                <span>↗</span></button>
+            </div>
+          </article>
+          <article class="game-card mystery-card">
+            <div class="game-art mystery-art"><img class="game-art-image"
+                src="assets/collection/ghost-coffin-open-skeleton.webp" alt="An ancient open coffin" loading="lazy">
+            </div>
+            <div class="game-content">
+              <div class="game-meta"><span>DETECTIVE STORY</span><span>3+ CLUES</span></div>
+              <h3>Haunted Mystery</h3>
+              <p>A silver moon pendant vanished at midnight. Can you discover who took it?</p><button
+                class="button button-ghost game-start" data-game="mystery" type="button">Solve the mystery
+                <span>↗</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn section" id="learn">
+      <div class="container">
+        <div class="section-heading centered academy-heading">
+          <p class="eyebrow">YOUR MIDNIGHT CLASSROOM</p>
+          <h2 class="spooky-title">HALLOWEEN <em>ACADEMY</em></h2>
+          <p>Three ways to explore: discover the origins, build your vocabulary, and test your knowledge. Learn at your
+            own pace.</p>
+          <div class="academy-route" aria-label="Learning path"><span><b>01</b> Origins</span><i></i><span><b>02</b>
+              Vocabulary</span><i></i><span><b>03</b> Challenge</span></div>
+        </div>
+        <div class="learn-grid academy-grid">
+          <article class="learn-card origins-card academy-card">
+            <div class="learn-card-top"><span class="academy-step">01</span>
+              <div class="learn-icon"><img src="assets/collection/ghost-coffin-closed-gothic.webp" alt=""
+                  loading="lazy"></div>
+            </div>
+            <p class="eyebrow">CHAPTER ONE</p>
+            <h3>Where did Halloween begin?</h3>
+            <p>Halloween is connected to the ancient Celtic festival of Samhain, which marked the seasonal transition
+              into winter. Over centuries, local customs, Christian traditions, and popular culture shaped the modern
+              celebration.</p><button class="text-link" id="origins-more" type="button" aria-expanded="false"
+              aria-controls="origins-extra">Read the history notes <span>↗</span></button>
+            <div class="origins-extra" id="origins-extra" hidden>
+              <p><strong>Samhain:</strong> an ancient Celtic festival in Ireland and Scotland marking the end of the
+                harvest around October 31–November 1. Folklore held that the boundary between the living and the dead
+                grew thin on this night.</p>
+              <p><strong>All Hallows’ Eve:</strong> All Saints’ Day falls on November 1 in the Christian calendar; its
+                eve became known as All Hallows’ Eve, later shortened to Halloween.</p>
+              <p><strong>Jack-o’-lanterns:</strong> in Ireland, early lanterns were carved from turnips. Immigrants
+                brought the tradition to North America, where pumpkins became popular. Modern trick-or-treating spread
+                in the United States and Canada during the 20th century.</p>
+              <p class="muted">Halloween’s history blends many traditions rather than stemming from a single, simple
+                origin.</p>
+            </div>
+          </article>
+          <article class="learn-card vocabulary-card academy-card">
+            <div class="learn-card-top"><span class="academy-step">02</span>
+              <div class="learn-icon"><img src="assets/collection/nightlight-03-purple-ghost-orb.webp" alt=""
+                  loading="lazy"></div>
+            </div>
+            <p class="eyebrow">WORD SPELLS</p>
+            <h3>Spellbinding vocabulary</h3>
+            <p>Explore 12 useful Halloween words with definitions and example sentences.</p>
+            <div class="vocab-tools"><label class="search-box vocab-search"><span aria-hidden="true">⌕</span><input
+                  id="vocab-search" type="search" placeholder="Search words or definitions…"
+                  aria-label="Search Halloween vocabulary"></label><span class="vocab-count" id="vocab-count"
+                aria-live="polite">12 words</span></div>
+            <div class="vocab-list" id="vocab-list" aria-live="polite"></div>
+            <p class="vocab-empty" id="vocab-empty" hidden>No matching words found. Try another search.</p>
+          </article>
+          <article class="learn-card quiz-card academy-card">
+            <div class="learn-card-top"><span class="academy-step">03</span>
+              <div class="learn-icon"><img src="assets/collection/candle-03-ivory-rune.webp" alt="" loading="lazy">
+              </div>
+            </div>
+            <p class="eyebrow">FINAL CHALLENGE</p>
+            <h3>Test your knowledge</h3>
+            <p>Twelve quick questions — how much do you know about Halloween?</p>
+            <div class="quiz-intro" id="quiz-intro"><span class="quiz-number">12</span><span>questions
+                await</span><button class="button button-primary" id="start-quiz" type="button">Start the quiz</button>
+            </div>
+            <div id="quiz-stage" hidden></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="party section" id="party">
+      <div class="container party-panel">
+        <div>
+          <p class="eyebrow">THE PARTY</p>
+          <h2 class="spooky-title">Halloween Party<br>October 31</h2>
+          <p>Throw a spectacular party and enjoy the spookiest night of the year with friends.</p>
+          <p class="party-count" id="party-count" role="timer"></p><button class="button button-primary"
+            id="start-party" type="button">Start the party ↗</button>
+        </div>
+        <img class="party-img" src="assets/collection/cauldron-purple-magic.webp" alt="A bubbling witch’s cauldron"
+          loading="lazy" width="340" height="344">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><img class="web-corner web-corner--footer-left"
+      src="assets/collection/spider-web-01-orb.webp" alt="" aria-hidden="true"><img
+      class="web-corner web-corner--footer-right" src="assets/collection/spider-web-03-torn-triangle.webp" alt=""
+      aria-hidden="true">
+    <div class="container footer-main">
+      <div><a class="brand" href="#home"><img class="brand-skull" src="assets/collection/skull-aged-02.webp" alt=""
+            width="20" height="26"> Halloween<span>World</span></a>
+        <p>A haunted little corner where curiosity comes alive.</p><span class="demo-note">FRONTEND DEMO PROJECT</span>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Explore</h4><a href="#shop">The Haunted Shop</a><a href="#games">Midnight Games</a><a
+            href="#learn">Halloween Academy</a>
+        </div>
+        <div>
+          <h4>Information</h4><a href="#about">About this world</a><span class="muted">Contact: not configured</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="current-year"></span> Halloween World. Interactive
+        demo.</span><a href="#home" class="back-top">Back to top ↑</a></div>
+  </footer>
+
+  <div class="overlay" id="cart-overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-modal="true" role="dialog" hidden>
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">YOUR HAUL</p>
+        <h2 id="cart-title">Shopping Cart <span id="drawer-count">(0)</span></h2>
+      </div><button class="icon-button" id="close-cart" type="button" aria-label="Close shopping cart">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal</span><strong id="cart-subtotal">0 ₫</strong></div>
+      <p class="cart-disclaimer">This is a demo cart. No real orders or payments are processed.</p><button
+        class="button button-primary full-width" id="checkout-button" type="button">Continue to demo checkout
+        ↗</button><button class="text-link centered-link" id="continue-shopping" type="button">Continue
+        shopping</button>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button class="icon-button modal-close" id="modal-close" type="button" aria-label="Close dialog">×</button>
+      <div id="modal-content"></div>
+    </section>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+
+</html>

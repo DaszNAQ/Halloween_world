@@ -1,0 +1,624 @@
+/* Asset-led Gothic art direction for the hero, categories, product cards, party, and footer. */
+:root {
+    --spooky: Georgia, "Times New Roman", serif
+}
+
+.spooky-title {
+    font-family: var(--spooky);
+    font-weight: 400;
+    letter-spacing: .02em;
+    color: var(--orange);
+    line-height: 1.25
+}
+
+.brand-skull {
+    width: 20px;
+    height: auto
+}
+
+.hero-tree-l {
+    left: -80px
+}
+
+.hero-tree-r {
+    right: -80px;
+    transform: scaleX(-1)
+}
+
+
+
+@keyframes float3 {
+    50% {
+        transform: translateY(-10px)
+    }
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin-inline: auto
+}
+
+.category-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 26px 20px 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+    cursor: pointer;
+    transition: border-color .25s, transform .25s
+}
+
+.category-card:hover {
+    border-color: rgba(255, 138, 61, .45);
+    transform: translateY(-6px)
+}
+
+.category-img {
+    height: 120px;
+    width: auto;
+    margin-top: -56px;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .4));
+    transition: transform .3s
+}
+
+.category-card:hover .category-img {
+    transform: scale(1.08) rotate(-4deg)
+}
+
+@keyframes twinkle {
+    50% {
+        transform: scale(.7) rotate(18deg);
+        opacity: .6
+    }
+}
+
+.category-card h3 {
+    color: var(--orange);
+    margin: 14px 0 6px;
+    font-size: 1.1rem
+}
+
+.category-card p {
+    font-size: .85rem;
+    margin: 0
+}
+
+.category {
+    padding-top: 130px
+}
+
+.about-night {
+    display: grid;
+    grid-template-columns: .8fr 1fr;
+    align-items: center;
+    gap: 50px;
+    margin: 0 auto 70px;
+    max-width: 880px
+}
+
+.about-img {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    filter: drop-shadow(0 0 40px rgba(255, 138, 61, .2))
+}
+
+.about-night h3 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem)
+}
+
+.product-img {
+    position: relative;
+    z-index: 1;
+    height: 135px;
+    width: auto;
+    max-width: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .4));
+    transition: transform .3s
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.08) rotate(-4deg)
+}
+
+.party-panel {
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px
+}
+
+.party-img {
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+    filter: drop-shadow(0 0 40px rgba(255, 138, 61, .25))
+}
+
+.party-count {
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 20px
+}
+
+.confetti {
+    position: fixed;
+    top: -40px;
+    z-index: 70;
+    pointer-events: none;
+    animation: fall linear forwards
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(112vh) rotate(360deg)
+    }
+}
+
+.site-footer {
+    overflow: hidden
+}
+
+.footer-tree-l {
+    left: -60px
+}
+
+.footer-tree-r {
+    right: -60px;
+    transform: scaleX(-1)
+}
+
+.footer-main,
+.footer-bottom {
+    position: relative;
+    z-index: 1
+}
+
+.js-reveal .rv {
+    opacity: 0;
+    translate: 0 28px;
+    transition: opacity .7s, translate .7s, transform .12s ease-out, border-color .25s
+}
+
+.js-reveal .rv.in {
+    opacity: 1;
+    translate: 0 0
+}
+
+@media(max-width:760px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+        max-width: 340px
+    }
+
+    .about-night,
+    .party-panel {
+        grid-template-columns: 1fr;
+        text-align: center
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .confetti {
+        display: none
+    }
+
+    .js-reveal .rv {
+        opacity: 1;
+        translate: none
+    }
+}
+
+
+/* Gothic asset-led art direction */
+
+
+
+
+
+
+
+
+
+
+/* Asset-only illustration pass: all decorative artwork comes from the supplied PNG files. */
+
+
+
+.product-visual:after {
+    display: none !important
+}
+
+.product-visual {
+    background: #21121a !important
+}
+
+.product-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    padding: 12px;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .35));
+    transition: transform .3s
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.06) rotate(-2deg)
+}
+
+.game-art {
+    background: #1b1016 !important;
+    display: grid;
+    place-items: center;
+    overflow: hidden
+}
+
+.game-art-image {
+    width: 100%;
+    height: 100%;
+    max-height: 230px;
+    object-fit: contain;
+    padding: 18px;
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, .4))
+}
+
+
+
+/* Asset-only illustration pass: all character/object artwork is loaded from the supplied image collection. */
+
+.feature-icon img,
+.learn-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block
+}
+
+.feature-icon {
+    overflow: hidden;
+    padding: 4px;
+    background: rgba(255, 255, 255, .025);
+    border: 1px solid var(--line)
+}
+
+.learn-icon {
+    display: grid;
+    place-items: center;
+    overflow: hidden
+}
+
+.learn-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain
+}
+
+
+.cart-line-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.cart-empty img {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px
+}
+
+.bg-fx .b img,
+.bg-fx .g img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block
+}
+
+/* Academy / Party UX polish */
+.confetti-image {
+    width: var(--confetti-size, 32px);
+    height: var(--confetti-size, 32px);
+    display: block;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .3))
+}
+
+.confetti-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.vocab-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 8px
+}
+
+.vocab-search {
+    max-width: none;
+    min-width: 0;
+    flex: 1;
+    border-radius: 13px;
+    padding: 0 12px
+}
+
+.vocab-search input {
+    font-size: .8rem
+}
+
+.vocab-count {
+    flex: none;
+    color: #d7a7a0;
+    font-size: .7rem;
+    white-space: nowrap
+}
+
+.vocab-row {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 0
+}
+
+.vocab-row[hidden],
+.vocab-empty[hidden] {
+    display: none
+}
+
+.vocab-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 10px;
+    min-width: 0
+}
+
+.vocab-info strong {
+    color: #f2e5df;
+    font-size: .9rem
+}
+
+.vocab-meaning {
+    align-self: center;
+    color: #d7a7a0;
+    font-size: .72rem;
+    text-align: right
+}
+
+.vocab-example {
+    grid-column: 1/-1;
+    color: #9f929b;
+    font-size: .74rem !important;
+    line-height: 1.5;
+    margin: 0 !important
+}
+
+.vocab-empty {
+    padding: 12px;
+    border: 1px dashed rgba(203, 154, 153, .25);
+    border-radius: 12px;
+    color: #b9aeb8;
+    font-size: .8rem
+}
+
+.quiz-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px
+}
+
+.quiz-status .eyebrow {
+    margin: 0
+}
+
+.quiz-live-score {
+    font-size: .72rem;
+    color: #d7a7a0
+}
+
+.quiz-question {
+    font-size: 1.08rem;
+    line-height: 1.5;
+    margin: 14px 0
+}
+
+.quiz-options {
+    display: grid;
+    gap: 8px
+}
+
+.academy-card .quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 12px;
+    text-align: left;
+    line-height: 1.45;
+    color: var(--cream);
+    border-color: rgba(203, 154, 153, .18);
+    background: rgba(0, 0, 0, .12)
+}
+
+.academy-card .quiz-option:hover:not(:disabled),
+.academy-card .quiz-option:focus-visible {
+    border-color: rgba(200, 91, 99, .6);
+    background: rgba(200, 91, 99, .08)
+}
+
+.academy-card .quiz-option:disabled {
+    cursor: default;
+    opacity: 1
+}
+
+.option-letter {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    border: 1px solid rgba(203, 154, 153, .22);
+    border-radius: 8px;
+    color: #d7a7a0;
+    font-size: .72rem;
+    font-weight: 800
+}
+
+.academy-card .quiz-option.correct {
+    border-color: rgba(125, 171, 122, .7);
+    background: rgba(87, 129, 83, .12)
+}
+
+.academy-card .quiz-option.correct .option-letter {
+    border-color: #7dab7a;
+    color: #b5d5aa
+}
+
+.academy-card .quiz-option.wrong {
+    border-color: rgba(200, 91, 99, .7);
+    background: rgba(200, 91, 99, .1)
+}
+
+.quiz-feedback {
+    display: grid;
+    gap: 8px;
+    border: 1px solid rgba(203, 154, 153, .16);
+    background: rgba(0, 0, 0, .13);
+    line-height: 1.65
+}
+
+.quiz-feedback p {
+    margin: 0
+}
+
+.quiz-feedback.is-correct {
+    border-color: rgba(125, 171, 122, .35)
+}
+
+.quiz-feedback.is-wrong {
+    border-color: rgba(200, 91, 99, .35)
+}
+
+.result-panel {
+    padding: 10px 0
+}
+
+.result-art {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 10px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, .4))
+}
+
+.result-percent {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #d7a7a0;
+    margin: 10px 0 5px
+}
+
+.result-panel h3 {
+    font-size: 1.35rem;
+    margin: 0 0 8px
+}
+
+.result-level {
+    font-weight: 800;
+    color: #f2e5df
+}
+
+.result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px
+}
+
+@media(max-width:760px) {
+    .vocab-tools {
+        align-items: stretch
+    }
+
+    .vocab-info {
+        grid-template-columns: 1fr
+    }
+
+    .vocab-meaning {
+        text-align: left
+    }
+
+    .result-actions {
+        flex-direction: column
+    }
+
+    .result-actions .button {
+        width: 100%
+    }
+}
+
+/* Game art uses supplied assets rather than emoji illustrations. */
+.result-symbol-image {
+    display: block;
+    width: 104px;
+    height: 104px;
+    object-fit: contain;
+    margin: 12px auto 18px;
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, .4))
+}
+
+.clue-image {
+    display: block;
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    margin: 0 auto 10px;
+    padding: 4px
+}
+
+.suspect-image {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-right: 10px
+}
+
+.choice-button:has(.suspect-image) {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.choice-button:has(.suspect-image) span {
+    flex: 1
+}
+
+.clue-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7px
+}
+
+.clue-card small {
+    line-height: 1.4
+}

@@ -1,0 +1,19 @@
+:root {
+  --ink: #0b070a;
+  --plum: #1c0b13;
+  --orange: #b72f3f;
+  --pink: #c6a0a7;
+  --green: #d6c5a1;
+  --cream: #f1e8df;
+  --muted: #b5a1a5;
+  --line: rgba(241, 232, 223, .14);
+  --panel: #1b1016;
+  --panel-light: #302027;
+  --radius: 22px;
+  --radius-sm: 13px;
+  --shadow: 0 22px 70px rgba(0, 0, 0, .52);
+  --container: 1160px;
+  /* Use dependable system fonts only; no remote display font can fail to load. */
+  --font: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  --spooky: Georgia, "Times New Roman", serif;
+}

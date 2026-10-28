@@ -1,0 +1,484 @@
+/* Gothic Halloween immersion: the web, bat, and ghost artwork below is loaded
+   from the user's supplied image assets. CSS animates those images only. */
+
+:root {
+  --spooky: Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-padding-top: 20px;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background: #0b070a;
+  font-family: var(--font);
+  font-synthesis: none;
+}
+
+/* The floating creatures sit behind content and never intercept interaction. */
+.bg-fx {
+  display: block !important;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+
+.bg-creature {
+  position: absolute;
+  top: var(--creature-top);
+  left: -13vw;
+  display: block;
+  width: var(--creature-size);
+  height: auto;
+  opacity: var(--creature-opacity);
+  animation: haunt-flight var(--creature-duration) linear var(--creature-delay) infinite;
+  will-change: transform;
+}
+
+.bg-creature--ghost {
+  filter: drop-shadow(0 0 15px rgba(189, 130, 190, .28));
+}
+
+.bg-creature--bat {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .85));
+}
+
+.bg-creature.is-reversed {
+  left: auto;
+  right: -13vw;
+  animation-name: haunt-flight-reverse;
+}
+
+.bg-creature img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+@keyframes haunt-flight {
+  0% {
+    transform: translate3d(-3vw, 0, 0) rotate(-8deg);
+  }
+
+  25% {
+    transform: translate3d(28vw, -24px, 0) rotate(4deg);
+  }
+
+  50% {
+    transform: translate3d(57vw, 18px, 0) rotate(-3deg);
+  }
+
+  75% {
+    transform: translate3d(86vw, -18px, 0) rotate(6deg);
+  }
+
+  100% {
+    transform: translate3d(118vw, 12px, 0) rotate(-7deg);
+  }
+}
+
+@keyframes haunt-flight-reverse {
+  0% {
+    transform: translate3d(3vw, 0, 0) scaleX(-1) rotate(-8deg);
+  }
+
+  25% {
+    transform: translate3d(-28vw, 20px, 0) scaleX(-1) rotate(4deg);
+  }
+
+  50% {
+    transform: translate3d(-57vw, -22px, 0) scaleX(-1) rotate(-3deg);
+  }
+
+  75% {
+    transform: translate3d(-86vw, 16px, 0) scaleX(-1) rotate(6deg);
+  }
+
+  100% {
+    transform: translate3d(-118vw, -8px, 0) scaleX(-1) rotate(-7deg);
+  }
+}
+
+/* Keep the content legible while allowing silhouettes to show through. */
+#main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  min-height: 88px;
+  background: rgba(15, 7, 11, .88);
+  border-bottom: 1px solid rgba(183, 47, 63, .32);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(8px);
+}
+
+.masthead {
+  position: relative;
+  z-index: 2;
+  min-height: 88px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  position: relative;
+  z-index: 2;
+  font-family: var(--spooky);
+  font-size: 1.18rem;
+  letter-spacing: .01em;
+}
+
+.brand-name {
+  display: inline-block;
+  color: var(--cream);
+}
+
+.brand-name b {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.brand-skull {
+  width: 28px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.masthead-tagline {
+  margin: 0;
+  text-align: center;
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .23em;
+  color: #b9a4a7;
+}
+
+.masthead-tagline span {
+  color: var(--orange);
+  padding: 0 8px;
+}
+
+.cart-trigger {
+  position: relative;
+  z-index: 2;
+  border-color: rgba(198, 160, 167, .32);
+  background: rgba(27, 16, 22, .8);
+  color: var(--cream);
+}
+
+.cart-trigger:hover {
+  border-color: var(--orange);
+  background: rgba(183, 47, 63, .12);
+}
+
+.cart-count {
+  color: #fff4ec;
+  background: var(--orange);
+}
+
+.web-corner {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: clamp(110px, 16vw, 210px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: .74;
+  filter: brightness(1.28) contrast(1.12) sepia(.12);
+}
+
+.web-corner--header-left {
+  top: -38px;
+  left: -27px;
+  transform: rotate(-8deg);
+}
+
+.web-corner--header-right {
+  top: -43px;
+  right: -28px;
+  transform: rotate(9deg) scaleX(-1);
+}
+
+.web-corner--footer-left {
+  left: -22px;
+  bottom: -44px;
+  width: clamp(150px, 22vw, 270px);
+  transform: rotate(3deg);
+}
+
+.web-corner--footer-right {
+  right: -18px;
+  bottom: -47px;
+  width: clamp(145px, 21vw, 250px);
+  transform: scaleX(-1) rotate(-7deg);
+}
+
+/* Dracula-dark sections, with transparent overlays so the asset sprites remain visible. */
+.section {
+  background-color: rgba(13, 7, 11, .82) !important;
+  isolation: isolate;
+}
+
+.hero.section {
+  background: linear-gradient(110deg, rgba(11, 7, 10, .84), rgba(27, 8, 17, .78)) !important;
+}
+
+.category.section,
+.intro.section,
+.shop.section,
+.learn.section {
+  background: rgba(13, 7, 11, .79) !important;
+}
+
+.games.section,
+.party.section {
+  background: rgba(24, 8, 16, .82) !important;
+}
+
+.site-footer {
+  overflow: hidden;
+  isolation: isolate;
+  background: rgba(10, 6, 9, .93);
+  border-top: 1px solid rgba(183, 47, 63, .36);
+}
+
+.footer-main,
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-main {
+  padding-top: 78px;
+}
+
+/* Reliable system typography: keep readable sans-serif body copy and a classic serif display face. */
+body,
+button,
+input {
+  font-family: var(--font);
+}
+
+h1,
+h2,
+h3,
+h4,
+.spooky-title {
+  font-family: var(--spooky);
+  font-synthesis: none;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -.025em;
+}
+
+.spooky-title {
+  font-weight: 700;
+  letter-spacing: .01em;
+  line-height: 1.18;
+}
+
+h1 em,
+h2 em {
+  font-family: var(--spooky);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.eyebrow {
+  letter-spacing: .2em;
+}
+
+/* Give the art a slightly more haunted, cinematic palette. */
+
+.category-card,
+.feature-card,
+.product-card,
+.game-card,
+.learn-card {
+  border-color: rgba(198, 160, 167, .15);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .12);
+}
+
+.category-card:hover,
+.product-card:hover,
+.game-card:hover,
+.learn-card:hover {
+  border-color: rgba(183, 47, 63, .55);
+}
+
+.button-primary {
+  box-shadow: 0 8px 24px rgba(124, 27, 43, .2);
+}
+
+@media (max-width: 760px) {
+  .masthead {
+    min-height: 78px;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+  }
+
+  .brand {
+    gap: 6px;
+    font-size: 1rem;
+  }
+
+  .brand-skull {
+    width: 23px;
+    height: 29px;
+  }
+
+  .masthead-tagline {
+    max-width: 155px;
+    margin-inline: auto;
+    font-size: .52rem;
+    letter-spacing: .12em;
+    line-height: 1.6;
+  }
+
+  .masthead-tagline span {
+    padding: 0 2px;
+  }
+
+  .cart-trigger {
+    gap: 6px;
+    padding: 8px 9px;
+    font-size: .76rem;
+  }
+
+  .web-corner {
+    opacity: .48;
+  }
+
+  .web-corner--header-left {
+    top: -26px;
+    left: -40px;
+  }
+
+  .web-corner--header-right {
+    top: -28px;
+    right: -40px;
+  }
+
+  .web-corner--footer-left,
+  .web-corner--footer-right {
+    width: 150px;
+    bottom: -24px;
+  }
+
+  .footer-main {
+    padding-top: 58px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-creature {
+    animation: none !important;
+  }
+
+  .bg-creature.is-reversed {
+    right: 5vw;
+  }
+
+  .bg-creature:not(.is-reversed) {
+    left: 5vw;
+  }
+}
+
+.brand>span:last-child {
+  color: var(--cream);
+  margin-left: 0;
+}
+
+
+/* Hero artwork: one supplied pumpkin image, no collage or code-drawn illustration. */
+.hero-art.hero-pumpkin {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: clamp(390px, 42vw, 520px);
+  min-height: 0;
+  overflow: visible;
+  isolation: isolate;
+  margin: 0;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.hero-pumpkin-image {
+  display: block;
+  width: min(100%, 510px);
+  height: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 32px rgba(0, 0, 0, .48));
+  animation: pumpkin-drift 6s ease-in-out infinite;
+}
+
+.hero-note-sigil {
+  display: inline-grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid rgba(198, 160, 167, .32);
+  border-radius: 50%;
+  color: var(--orange);
+  font-size: .9rem;
+}
+
+@keyframes pumpkin-drift {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-art.hero-pumpkin {
+    width: min(100%, 480px);
+    height: clamp(275px, 76vw, 390px);
+    margin: 14px auto 0;
+  }
+
+  .hero-pumpkin-image {
+    max-height: 390px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-art.hero-pumpkin {
+    height: 285px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pumpkin-image {
+    animation: none;
+  }
+}
