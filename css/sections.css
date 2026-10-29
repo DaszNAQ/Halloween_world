@@ -335,7 +335,7 @@
  /* Prevent CSS-generated illustration shapes; supplied image assets are used instead. */
 
 
- /* Halloween Academy — focused learning layout */
+ /* Halloween Academy â€” focused learning layout */
  .academy-heading {
      padding: clamp(24px, 4vw, 52px) 0 8px
  }
@@ -398,7 +398,9 @@
  }
 
  .academy-grid {
-     grid-template-columns: repeat(3, minmax(0, 1fr));
+     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+     grid-template-areas: "origins vocabulary" "quiz vocabulary";
+     grid-template-rows: minmax(0, auto) minmax(0, auto);
      align-items: stretch;
      gap: 18px
  }
@@ -424,10 +426,15 @@
  }
 
  .academy-card.origins-card {
-     grid-row: auto
+     grid-area: origins
+ }
+
+ .academy-card.quiz-card {
+     grid-area: quiz
  }
 
  .academy-card.vocabulary-card {
+     grid-area: vocabulary;
      max-height: none;
      overflow: visible
  }
@@ -523,17 +530,15 @@
 
  @media(max-width:1000px) {
      .academy-grid {
-         grid-template-columns: repeat(2, minmax(0, 1fr))
-     }
-
-     .academy-card.origins-card {
-         grid-row: span 2
+         grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr)
      }
  }
 
  @media(max-width:760px) {
      .academy-grid {
-         grid-template-columns: 1fr
+         grid-template-columns: 1fr;
+         grid-template-areas: "origins" "vocabulary" "quiz";
+         grid-template-rows: auto
      }
 
      .academy-card.origins-card {

@@ -321,14 +321,6 @@
     margin: 0 auto 12px
 }
 
-.bg-fx .b img,
-.bg-fx .g img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block
-}
-
 /* Academy / Party UX polish */
 .confetti-image {
     width: var(--confetti-size, 32px);

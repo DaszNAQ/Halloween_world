@@ -42,6 +42,7 @@ export function initShop(cart, toast, openModal) {
       art.src = product.image;
       art.alt = product.name;
       art.loading = "lazy";
+      art.decoding = "async";
       visual.append(tag, art);
 
       const info = document.createElement("div");

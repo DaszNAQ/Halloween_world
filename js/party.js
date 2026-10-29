@@ -11,9 +11,12 @@ export function initParty(toast) {
     "witch-hat-01-plum-bow.webp"
   ];
   button.addEventListener("click", () => {
+    if (button.disabled) return;
     toast("The party has begun. Have a gloriously spooky night!");
     if (reducedMotion) return;
-    for (let i = 0; i < 24; i++) {
+    button.disabled = true;
+    window.setTimeout(() => { button.disabled = false; }, 6000);
+    for (let i = 0; i < 12; i++) {
       const piece = document.createElement("span");
       piece.className = "confetti confetti-image";
       piece.setAttribute("aria-hidden", "true");

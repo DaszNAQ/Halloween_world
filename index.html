@@ -8,7 +8,7 @@
   <meta name="description"
     content="Halloween World — explore a haunted shop, play mysterious mini-games, and discover the lore of Halloween.">
   <title>Halloween World — Enter the Haunted Night</title>
-  <link rel="icon" href="assets/collection/skull-aged-02.webp" type="image/png">
+  <link rel="icon" href="assets/collection/skull-aged-02.webp" type="image/webp">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -18,11 +18,11 @@
   <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/showcase.css">
   <link rel="stylesheet" href="css/immersive.css">
+  <link rel="stylesheet" href="css/creepypasta.css">
   <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
-  <div class="bg-fx" id="bg-fx" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <img class="web-corner web-corner--header-left" src="assets/collection/spider-web-02-corner-wood.webp" alt=""
@@ -34,8 +34,12 @@
           src="assets/collection/skull-aged-02.webp" alt="" width="24" height="30"> <span class="brand-name">Halloween
           <b>World</b></span></a>
       <p class="masthead-tagline">ENTER IF YOU DARE <span aria-hidden="true">✦</span> A GOTHIC HALLOWEEN EXPERIENCE</p>
-      <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping cart">Cart <span
-          id="cart-count" class="cart-count">0</span></button>
+      <div class="masthead-actions">
+        <button class="language-trigger" id="language-toggle" type="button" aria-label="Translate page to Vietnamese"
+          aria-pressed="false">Tiếng Việt</button>
+        <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping cart">Cart <span
+            id="cart-count" class="cart-count">0</span></button>
+      </div>
     </div>
   </header>
 
@@ -44,10 +48,10 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-dot"></span> THE NIGHT IS YOUNG</p>
-          <h1>A little <em>macabre.</em><br>A whole lot of <span>magic.</span></h1>
-          <p class="hero-description">The gates are open. Explore the haunted shop, test your instincts, and uncover
-            secrets hidden in the Halloween night.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#shop">Explore the world <span
+          <h1>The file was closed.<br>It came back <em>open.</em></h1>
+          <p class="hero-description">The midnight archive is full of unverified photographs, missing relics, and
+            stories that refuse to stay buried. Explore if you dare.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#archive">Open the archive <span
                 aria-hidden="true">↗</span></a><a class="button button-ghost" href="#games">Play the games <span
                 aria-hidden="true">▷</span></a></div>
           <div class="hero-note"><span class="hero-note-sigil" aria-hidden="true">✦</span><span>A strange and wondrous
@@ -70,17 +74,17 @@
         </div>
         <div class="category-grid">
           <button class="category-card" type="button" data-shop-category="decor"><img class="category-img"
-              src="assets/collection/pumpkin-01-classic.webp" alt="" loading="lazy">
+              src="assets/collection/pumpkin-01-classic.webp" alt="" loading="lazy" decoding="async">
             <h3>Decor</h3>
             <p>Glowing pumpkins and eerie relics to light up the night.</p>
           </button>
           <button class="category-card" type="button" data-shop-category="toy"><img class="category-img"
-              src="assets/collection/nightlight-02-ghost-lantern.webp" alt="" loading="lazy">
+              src="assets/collection/nightlight-02-ghost-lantern.webp" alt="" loading="lazy" decoding="async">
             <h3>Toys</h3>
             <p>Ghostly companions for the most haunted home.</p>
           </button>
           <button class="category-card" type="button" data-shop-category="accessory"><img class="category-img"
-              src="assets/collection/witch-hat-01-plum-bow.webp" alt="" loading="lazy">
+              src="assets/collection/witch-hat-01-plum-bow.webp" alt="" loading="lazy" decoding="async">
             <h3>Accessories</h3>
             <p>Witch hats and costume accessories for your midnight transformation.</p>
           </button>
@@ -194,11 +198,38 @@
       </div>
     </section>
 
+    <section class="archive section" id="archive">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">RESTRICTED EVIDENCE · FILE 031</p>
+            <h2>Stories leave<br><em>something behind.</em></h2>
+          </div>
+          <p>Recovered objects, damaged keepsakes, and things that should have stayed in the dark. Open the archive
+            only if you want to see the full collection.</p>
+        </div>
+        <div class="archive-panel">
+          <div class="archive-stamp" aria-hidden="true">UNVERIFIED</div>
+          <div class="archive-preview" aria-hidden="true">
+            <img src="assets/collection/skull-cracked-01.webp" alt="" loading="lazy" decoding="async">
+            <img src="assets/collection/black-cat-regal-with-golden-eyes.webp" alt="" loading="lazy" decoding="async">
+            <img src="assets/collection/spider-03-armored-red-back.webp" alt="" loading="lazy" decoding="async">
+          </div>
+          <details class="archive-details" id="artifact-archive">
+            <summary><span>Open the evidence archive</span><span class="archive-count">54 recovered items</span></summary>
+            <p class="archive-warning">Inventory log: 54 items. Images load as you browse; nothing in this archive is authenticated.</p>
+            <div class="artifact-grid" id="artifact-grid" aria-live="polite"></div>
+            <button class="button button-ghost archive-more" id="artifact-more" type="button" hidden>Reveal next 12 records</button>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="learn section" id="learn">
       <div class="container">
         <div class="section-heading centered academy-heading">
           <p class="eyebrow">YOUR MIDNIGHT CLASSROOM</p>
-          <h2 class="spooky-title">HALLOWEEN <em>ACADEMY</em></h2>
+          <h2 class="spooky-title" id="academy-title"><span>HALLOWEEN</span> <em>ACADEMY</em></h2>
           <p>Three ways to explore: discover the origins, build your vocabulary, and test your knowledge. Learn at your
             own pace.</p>
           <div class="academy-route" aria-label="Learning path"><span><b>01</b> Origins</span><i></i><span><b>02</b>
@@ -277,9 +308,9 @@
   </main>
 
   <footer class="site-footer"><img class="web-corner web-corner--footer-left"
-      src="assets/collection/spider-web-01-orb.webp" alt="" aria-hidden="true"><img
+      src="assets/collection/spider-web-01-orb.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img
       class="web-corner web-corner--footer-right" src="assets/collection/spider-web-03-torn-triangle.webp" alt=""
-      aria-hidden="true">
+      aria-hidden="true" loading="lazy" decoding="async">
     <div class="container footer-main">
       <div><a class="brand" href="#home"><img class="brand-skull" src="assets/collection/skull-aged-02.webp" alt=""
             width="20" height="26"> Halloween<span>World</span></a>
@@ -288,7 +319,7 @@
       <div class="footer-links">
         <div>
           <h4>Explore</h4><a href="#shop">The Haunted Shop</a><a href="#games">Midnight Games</a><a
-            href="#learn">Halloween Academy</a>
+            href="#archive">Evidence Archive</a><a href="#learn">Halloween Academy</a>
         </div>
         <div>
           <h4>Information</h4><a href="#about">About this world</a><span class="muted">Contact: not configured</span>

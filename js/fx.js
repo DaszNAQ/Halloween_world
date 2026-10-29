@@ -2,16 +2,12 @@
 // CSS only animates the images; it does not draw replacement illustrations.
 const REDUCED_MOTION = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const CREATURE_ASSETS = [
-  { type: "bat", src: "menacing-bat-in-flight.webp", alt: "A bat flying through the shadows" },
-  { type: "ghost", src: "nightlight-02-ghost-lantern.webp", alt: "A floating ghost lantern" },
-  { type: "bat", src: "inverted-bronze-eyed-bat.webp", alt: "A bronze-eyed bat drifting by" },
-  { type: "ghost", src: "nightlight-03-purple-ghost-orb.webp", alt: "A spectral purple ghost light" },
-  { type: "bat", src: "menacing-winged-bat-creature.webp", alt: "A winged creature in flight" },
-  { type: "ghost", src: "20261026-1505-image.webp", alt: "A pale, eerie mask floating in the night" },
-  { type: "bat", src: "menacing-bat-in-flight.webp", alt: "A shadow bat in flight" },
-  { type: "ghost", src: "nightlight-02-ghost-lantern.webp", alt: "A wandering ghost lantern" },
-  { type: "bat", src: "inverted-bronze-eyed-bat.webp", alt: "A bat passing overhead" },
-  { type: "ghost", src: "nightlight-03-purple-ghost-orb.webp", alt: "A purple phantom light" }
+  { type: "bat", src: "menacing-bat-in-flight.webp" },
+  { type: "ghost", src: "nightlight-02-ghost-lantern.webp" },
+  { type: "bat", src: "menacing-bat-in-flight.webp" },
+  { type: "ghost", src: "nightlight-03-purple-ghost-orb.webp" },
+  { type: "bat", src: "menacing-winged-bat-creature.webp" },
+  { type: "ghost", src: "nightlight-02-ghost-lantern.webp" }
 ];
 
 function addBackgroundCreatures() {
@@ -33,8 +29,8 @@ function addBackgroundCreatures() {
     image.src = `assets/collection/${creature.src}`;
     image.alt = "";
     image.decoding = "async";
+    image.fetchPriority = "low";
     image.draggable = false;
-    image.title = "";
     sprite.append(image);
     layer.append(sprite);
   });
@@ -42,5 +38,8 @@ function addBackgroundCreatures() {
 }
 
 export function initFx() {
-  addBackgroundCreatures();
+  if (REDUCED_MOTION) return;
+  const start = () => addBackgroundCreatures();
+  if ("requestIdleCallback" in window) window.requestIdleCallback(start, { timeout: 1800 });
+  else window.setTimeout(start, 500);
 }

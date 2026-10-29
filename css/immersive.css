@@ -1,5 +1,4 @@
-/* Gothic Halloween immersion: the web, bat, and ghost artwork below is loaded
-   from the user's supplied image assets. CSS animates those images only. */
+/* Gothic Halloween theme. */
 
 :root {
   --spooky: Georgia, "Times New Roman", serif;
@@ -15,95 +14,6 @@ body {
   background: #0b070a;
   font-family: var(--font);
   font-synthesis: none;
-}
-
-/* The floating creatures sit behind content and never intercept interaction. */
-.bg-fx {
-  display: block !important;
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  contain: layout paint;
-}
-
-.bg-creature {
-  position: absolute;
-  top: var(--creature-top);
-  left: -13vw;
-  display: block;
-  width: var(--creature-size);
-  height: auto;
-  opacity: var(--creature-opacity);
-  animation: haunt-flight var(--creature-duration) linear var(--creature-delay) infinite;
-  will-change: transform;
-}
-
-.bg-creature--ghost {
-  filter: drop-shadow(0 0 15px rgba(189, 130, 190, .28));
-}
-
-.bg-creature--bat {
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .85));
-}
-
-.bg-creature.is-reversed {
-  left: auto;
-  right: -13vw;
-  animation-name: haunt-flight-reverse;
-}
-
-.bg-creature img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 110px;
-  object-fit: contain;
-}
-
-@keyframes haunt-flight {
-  0% {
-    transform: translate3d(-3vw, 0, 0) rotate(-8deg);
-  }
-
-  25% {
-    transform: translate3d(28vw, -24px, 0) rotate(4deg);
-  }
-
-  50% {
-    transform: translate3d(57vw, 18px, 0) rotate(-3deg);
-  }
-
-  75% {
-    transform: translate3d(86vw, -18px, 0) rotate(6deg);
-  }
-
-  100% {
-    transform: translate3d(118vw, 12px, 0) rotate(-7deg);
-  }
-}
-
-@keyframes haunt-flight-reverse {
-  0% {
-    transform: translate3d(3vw, 0, 0) scaleX(-1) rotate(-8deg);
-  }
-
-  25% {
-    transform: translate3d(-28vw, 20px, 0) scaleX(-1) rotate(4deg);
-  }
-
-  50% {
-    transform: translate3d(-57vw, -22px, 0) scaleX(-1) rotate(-3deg);
-  }
-
-  75% {
-    transform: translate3d(-86vw, 16px, 0) scaleX(-1) rotate(6deg);
-  }
-
-  100% {
-    transform: translate3d(-118vw, -8px, 0) scaleX(-1) rotate(-7deg);
-  }
 }
 
 /* Keep the content legible while allowing silhouettes to show through. */
@@ -132,6 +42,35 @@ body {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 24px;
+}
+
+.masthead-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.language-trigger {
+  position: relative;
+  z-index: 2;
+  min-height: 42px;
+  padding: 0 13px;
+  border: 1px solid rgba(198, 160, 167, .32);
+  border-radius: 999px;
+  background: rgba(27, 16, 22, .8);
+  color: #e9d5d2;
+  font: inherit;
+  font-size: .76rem;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.language-trigger:hover,
+.language-trigger:focus-visible {
+  border-color: var(--orange);
+  background: rgba(183, 47, 63, .12);
+  color: #fff4ec;
 }
 
 .brand {
@@ -357,6 +296,16 @@ h2 em {
     padding: 0 2px;
   }
 
+  .masthead-actions {
+    gap: 6px;
+  }
+
+  .language-trigger {
+    min-height: 38px;
+    padding: 0 9px;
+    font-size: .68rem;
+  }
+
   .cart-trigger {
     gap: 6px;
     padding: 8px 9px;
@@ -385,20 +334,6 @@ h2 em {
 
   .footer-main {
     padding-top: 58px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bg-creature {
-    animation: none !important;
-  }
-
-  .bg-creature.is-reversed {
-    right: 5vw;
-  }
-
-  .bg-creature:not(.is-reversed) {
-    left: 5vw;
   }
 }
 

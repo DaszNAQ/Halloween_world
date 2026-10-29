@@ -4,10 +4,11 @@ import { initCart } from "./cart.js";
 import { showFate } from "./halloween-fate.js";
 import { showMystery } from "./haunted-mystery.js";
 import { initEducation } from "./education.js";
-import { initFx } from "./fx.js";
 import { initReveal } from "./reveal.js";
 import { initCategories } from "./categories.js";
 import { initParty } from "./party.js";
+import { initLanguage } from "./language.js";
+import { initArchive } from "./archive.js";
 
 const toastRegion=document.querySelector("#toast-region");
 function toast(message){const item=document.createElement("div");item.className="toast";item.textContent=message;toastRegion.append(item);window.setTimeout(()=>item.remove(),3200);}
@@ -22,8 +23,9 @@ initNavigation();
 const cart=initCart(products,toast,openModal);
 initShop(cart,toast,openModal);
 initEducation(toast);
-initFx();
 initReveal();
 initCategories();
 initParty(toast);
+initLanguage();
+initArchive();
 document.querySelectorAll(".game-start").forEach(button=>button.addEventListener("click",()=>openModal("",()=>{if(button.dataset.game==="fate")showFate(content);else showMystery(content)})));
